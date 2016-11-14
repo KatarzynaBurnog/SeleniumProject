@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="JobSearchTestSuite" verbose="1" parallel="tests" thread-count="1">
+
+    <listeners>
+        <listener class-name="utils.LoggerListener"/>
+    </listeners>
+
+    <parameter name="url"  value="http://akamaijobs.referrals.selectminds.com"/>
+    <parameter name="timeToWait"  value="10"/>
+
+    <test name="FirefoxTest">
+        <parameter name="browser"  value="firefox"/>
+        <parameter name="geckodriverPath" value="D:\\JavaFrameworks\\geckodriver-v0.11.1-win64\\geckodriver.exe"/>
+        <parameter name="pathToDriver"  value=""/>
+        <classes>
+            <class name="selenium.tests.SearchJobTest"/>
+        </classes>
+    </test>
+
+</suite>
